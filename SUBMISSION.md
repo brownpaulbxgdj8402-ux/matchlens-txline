@@ -34,10 +34,10 @@ The integration was validated against TxLINE Devnet on July 15, 2026. The activa
 - Odds snapshots produce normalized implied probabilities and market movement.
 - The proxy uses the required guest JWT and activated API token headers.
 
-## Links to add before submission
+## Links
 
-- Live application: `TBD_AFTER_DEPLOYMENT`
-- Public repository: `TBD_AFTER_GITHUB_PUBLISH`
+- Live application: https://matchlens-txline.netlify.app
+- Public repository: https://github.com/brownpaulbxgdj8402-ux/matchlens-txline
 - Demo video: `TBD_AFTER_RECORDING`
 
 ## API feedback
