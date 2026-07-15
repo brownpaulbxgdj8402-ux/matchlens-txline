@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101211">
+  <meta name="description" content="A live World Cup companion powered by verifiable TxLINE sports data.">
+  <title>MatchLens - See the match change</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="MatchLens home">
+      <span class="brand-mark" aria-hidden="true">ML</span>
+      <span>MatchLens</span>
+    </a>
+    <div class="topbar-actions">
+      <span class="source-status" id="sourceStatus"><span class="status-dot"></span> Demo replay</span>
+      <button class="icon-button" id="themeButton" type="button" aria-label="Toggle color theme" title="Toggle color theme">
+        <span aria-hidden="true">◐</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="match-strip" aria-label="Matches">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">World Cup match centre</p>
+          <h1>See the match change.</h1>
+        </div>
+        <div class="strip-controls" role="group" aria-label="Match day">
+          <button class="text-button" id="previousButton" type="button" aria-label="Previous match">←</button>
+          <span id="matchPosition">1 of 3</span>
+          <button class="text-button" id="nextButton" type="button" aria-label="Next match">→</button>
+        </div>
+      </div>
+      <div class="match-tabs" id="matchTabs" role="tablist" aria-label="Available matches"></div>
+    </section>
+
+    <section class="score-band" aria-labelledby="fixtureTitle">
+      <div class="competition-line">
+        <span id="competition">World Cup · Group C</span>
+        <span class="live-chip" id="matchState">LIVE · 67'</span>
+      </div>
+      <div class="scoreboard">
+        <div class="team team-home">
+          <span class="team-code" id="homeCode">ARG</span>
+          <h2 id="homeName">Argentina</h2>
+        </div>
+        <div class="score-centre">
+          <div class="score" id="score" aria-live="polite">2<span>:</span>1</div>
+          <p id="fixtureTitle">Lusail Stadium</p>
+        </div>
+        <div class="team team-away">
+          <span class="team-code" id="awayCode">MEX</span>
+          <h2 id="awayName">Mexico</h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="insight-band">
+      <div class="pulse-copy">
+        <p class="eyebrow">Match pulse</p>
+        <h2 id="pulseHeadline">Argentina have taken control</h2>
+        <p id="pulseExplanation">Their win probability has climbed 18 points since the second goal. Mexico need the next five minutes to interrupt the trend.</p>
+      </div>
+      <div class="probability-chart" aria-label="Win probability">
+        <div class="chart-header">
+          <span>Win probability</span>
+          <strong id="probabilityValue">72%</strong>
+        </div>
+        <svg id="probabilitySvg" viewBox="0 0 680 190" role="img" aria-labelledby="probabilityTitle probabilityDesc">
+          <title id="probabilityTitle">Home team win probability over the match</title>
+          <desc id="probabilityDesc">A line chart showing changes in the selected team's implied win probability.</desc>
+          <g class="chart-grid"></g>
+          <path class="probability-area" id="probabilityArea"></path>
+          <path class="probability-line" id="probabilityLine"></path>
+          <g class="chart-events" id="chartEvents"></g>
+        </svg>
+        <div class="chart-axis"><span>Kick-off</span><span>Half-time</span><span id="minuteLabel">67'</span></div>
+      </div>
+    </section>
+
+    <section class="details-grid">
+      <article class="timeline-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">What changed</p>
+            <h2>Match timeline</h2>
+          </div>
+          <button class="text-button active" id="playButton" type="button" aria-pressed="true">Pause replay</button>
+        </div>
+        <ol class="timeline" id="timeline"></ol>
+      </article>
+
+      <aside class="odds-panel" aria-labelledby="marketTitle">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Consensus market</p>
+            <h2 id="marketTitle">What the market sees</h2>
+          </div>
+          <span class="verified-label">TxLINE verified</span>
+        </div>
+        <div class="market-options" id="marketOptions"></div>
+        <div class="market-note">
+          <span class="note-icon" aria-hidden="true">i</span>
+          <p id="marketNote">Prices aggregate the latest available market snapshots. They are context, not financial advice.</p>
+        </div>
+        <dl class="data-health">
+          <div><dt>Fixture</dt><dd id="fixtureId">90012001</dd></div>
+          <div><dt>Last update</dt><dd id="lastUpdate">8s ago</dd></div>
+          <div><dt>Feed</dt><dd>Scores + odds</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="data-band">
+      <div>
+        <p class="eyebrow">Data integrity</p>
+        <h2>Every shift has a source.</h2>
+      </div>
+      <p>MatchLens combines TxLINE fixture, score and odds snapshots behind a server-side adapter. Production credentials never reach the browser.</p>
+      <a href="https://txline.txodds.com/documentation/worldcup" target="_blank" rel="noreferrer">Read TxLINE docs ↗</a>
+    </section>
+  </main>
+
+  <footer>
+    <span>MatchLens · World Cup companion</span>
+    <span>Built for the TxODDS World Cup Hackathon</span>
+  </footer>
+  <script src="demo-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
