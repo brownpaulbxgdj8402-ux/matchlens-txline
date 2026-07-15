@@ -38,7 +38,7 @@ The integration was validated against TxLINE Devnet on July 15, 2026. The activa
 
 - Live application: https://matchlens-txline.netlify.app
 - Public repository: https://github.com/brownpaulbxgdj8402-ux/matchlens-txline
-- Demo video: `TBD_AFTER_RECORDING`
+- Demo video: https://matchlens-txline.netlify.app/demo.webm
 
 ## API feedback
 
