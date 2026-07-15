@@ -29,6 +29,8 @@ Open `index.html` directly in a browser. It uses a deterministic three-match rep
 
 Live deployment: https://matchlens-txline.netlify.app
 
+Demo video: https://matchlens-txline.netlify.app/demo.webm
+
 ## Activate live data
 
 1. Follow the official TxLINE World Cup Free Tier guide.
